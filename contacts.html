@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакти салону краси Lumière — адреса, графік, зворотний зв'язок</title>
   <meta name="description" content="Салон краси Lumière: вул. Ярославів Вал, 12, Київ. Працюємо щодня, телефон +380 67 123 45 67. Карта проїзду та форма зворотного зв'язку.">
-  <link rel="canonical" href="https://lumiere-salon.example.com/contacts.html">
+  <link rel="canonical" href="https://kopchuk-creator.github.io/Lumiere/contacts.html">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Контакти салону Lumière">
   <meta property="og:description" content="вул. Ярославів Вал, 12, Київ · щодня з 9:00 · +380 67 123 45 67">
-  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
-  <meta property="og:url" content="https://lumiere-salon.example.com/contacts.html">
+  <meta property="og:image" content="https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://kopchuk-creator.github.io/Lumiere/contacts.html">
   <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до вмісту</a>
@@ -37,17 +38,22 @@
           <li><a class="nav__link" href="services.html">Послуги</a></li>
           <li><a class="nav__link" href="masters.html">Майстри</a></li>
           <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="shop.html">Крамниця</a></li>
           <li><a class="nav__link" href="contacts.html" aria-current="page">Контакти</a></li>
         </ul>
       </nav>
       <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Контакти</p>
+        <p class="script-accent">Чекаємо на вас ♡</p>
         <h1>Завітайте до <em>Lumière</em></h1>
         <p>Ми у самому серці Києва, за 5 хвилин пішки від метро «Золоті ворота».</p>
       </div>
@@ -136,6 +142,7 @@
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
             <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="shop.html">Крамниця</a></li>
           </ul>
         </div>
         <div>
@@ -155,7 +162,9 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="shop-data.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
   <script>
     /* Форма зворотного зв'язку. Точка інтеграції: submit → бекенд/CRM. */
     (function () {
@@ -170,6 +179,19 @@
         err.classList.toggle('is-visible', !!msg);
         input.setAttribute('aria-invalid', msg ? 'true' : 'false');
       }
+
+      /* Інлайн-валідація по blur — консистентно з формою запису:
+         заповнене поле перевіряється одразу після втрати фокусу,
+         порожні поля перевіряються при сабміті. */
+      var blurRules = {
+        'fb-name': function (v) { return v && v.length < 2 ? 'Вкажіть ім’я (мінімум 2 символи).' : ''; },
+        'fb-email': function (v) { return v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? 'Вкажіть коректний email.' : ''; },
+        'fb-message': function (v) { return v && v.length < 5 ? 'Напишіть повідомлення (мінімум 5 символів).' : ''; }
+      };
+      form.addEventListener('focusout', function (e) {
+        var rule = blurRules[e.target.id];
+        if (rule) setErr(e.target.id, rule(e.target.value.trim()));
+      });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();

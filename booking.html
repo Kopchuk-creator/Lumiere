@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Онлайн-запис до салону краси Lumière — оберіть послугу, майстра і час</title>
   <meta name="description" content="Запишіться до салону Lumière онлайн за 2 хвилини: оберіть послугу, майстра, зручну дату та час. Адміністратор передзвонить для підтвердження.">
-  <link rel="canonical" href="https://lumiere-salon.example.com/booking.html">
+  <link rel="canonical" href="https://kopchuk-creator.github.io/Lumiere/booking.html">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Онлайн-запис — салон краси Lumière">
   <meta property="og:description" content="Оберіть послугу, майстра та зручний час онлайн — без дзвінків і очікування.">
-  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
-  <meta property="og:url" content="https://lumiere-salon.example.com/booking.html">
+  <meta property="og:image" content="https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://kopchuk-creator.github.io/Lumiere/booking.html">
   <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до вмісту</a>
@@ -37,17 +38,22 @@
           <li><a class="nav__link" href="services.html">Послуги</a></li>
           <li><a class="nav__link" href="masters.html">Майстри</a></li>
           <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="shop.html">Крамниця</a></li>
           <li><a class="nav__link" href="contacts.html">Контакти</a></li>
         </ul>
       </nav>
       <a class="btn btn--gold header__cta" href="booking.html" aria-current="page">Записатись</a>
+      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
   <main id="main">
     <section class="page-hero">
       <div class="container booking-wrap">
-        <p class="eyebrow">Онлайн-запис</p>
+        <p class="script-accent">Запишіться до нас ♡</p>
         <h1>Запис за <em>2 хвилини</em></h1>
         <p>П’ять простих кроків: послуга → майстер → дата і час → контакти → перевірка. Кнопка «Назад» не стирає введені дані.</p>
       </div>
@@ -91,6 +97,7 @@
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
             <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="shop.html">Крамниця</a></li>
           </ul>
         </div>
         <div>
@@ -110,8 +117,10 @@
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/booking.js"></script>
+  <script src="data.js"></script>
+  <script src="shop-data.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
+  <script src="booking.js"></script>
 </body>
 </html>

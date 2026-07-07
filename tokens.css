@@ -1,36 +1,42 @@
 /* ============================================
-   Lumière — дизайн-токени
-   Глем/редакційна бьюті-естетика (глянцевий журнал)
+   Lumière — дизайн-токени v2
+   «Рожевий глем»: pink → purple градієнти,
+   білі картки, скриптові акценти (за референсами)
    ============================================ */
 
 :root {
   /* --- Палітра --- */
-  --c-bg:        #FBEAE5; /* пудрово-рожевий фон */
-  --c-bordo:     #4A1E2B; /* бордо — акценти, заголовки */
-  --c-gold:      #C9A24B; /* приглушене золото — CTA, декор */
-  --c-gold-deep: #7A5C22; /* темне золото — текстові лінки на світлому (≈5.3:1, WCAG AA) */
-  --c-ink:       #2E2A28; /* майже чорний — основний текст */
-  --c-cream:     #F5F0EC; /* теплий кремовий — картки */
-
-  --c-bordo-soft: #6B3242;
-  --c-rose-line:  #E9CFC6; /* тонкі лінії/бордери на пудровому */
-  --c-white:      #FFFFFF;
-  --c-error:      #A6252F;
+  --c-bg:         #FDF0F6; /* світло-рожевий фон сторінки */
+  --c-bg-soft:    #FBE3EF; /* насиченіший рожевий для секцій/плям */
+  --c-pink:       #EC4899; /* основний рожевий — декор, іконки, бейджі */
+  --c-pink-deep:  #C2186B; /* темний рожевий — текстові лінки (WCAG AA ≈5.2:1) */
+  --c-purple:     #7C3AED; /* фіолетовий — градієнти, акценти */
+  --c-purple-deep:#4C1D95; /* глибокий фіолет — заголовки */
+  --c-ink:        #372549; /* основний текст — темна слива */
+  --c-card:       #FFFFFF; /* білі картки */
+  --c-line:       #F5CCE1; /* тонкі рожеві лінії/бордери */
+  --c-error:      #B3261E;
   --c-success:    #2F6B3A;
 
-  /* --- Типографіка --- */
-  --font-serif: "Playfair Display", "Georgia", serif;
-  --font-sans:  "Manrope", "Segoe UI", system-ui, sans-serif;
+  /* Градієнти (обидва краї тримають білий текст ≥ 4.5:1) */
+  --grad-main: linear-gradient(120deg, #DB2777 0%, #A21CAF 55%, #7C3AED 100%);
+  --grad-soft: linear-gradient(135deg, #FDE0EF 0%, #F3D9FA 100%);
 
-  --fs-display: clamp(2.4rem, 6vw, 4.4rem);
-  --fs-h1:      clamp(2rem, 4.5vw, 3.2rem);
-  --fs-h2:      clamp(1.6rem, 3.2vw, 2.3rem);
-  --fs-h3:      1.25rem;
-  --fs-body:    1rem;
-  --fs-small:   0.875rem;
+  /* --- Типографіка --- */
+  --font-serif:  "Playfair Display", "Georgia", serif;  /* великі заголовки */
+  --font-script: "Marck Script", cursive;               /* рукописні акценти (є кирилиця) */
+  --font-sans:   "Poppins", "Segoe UI", system-ui, sans-serif;
+
+  --fs-display: clamp(2.4rem, 6vw, 4.2rem);
+  --fs-h1:      clamp(2rem, 4.5vw, 3.1rem);
+  --fs-h2:      clamp(1.55rem, 3.2vw, 2.2rem);
+  --fs-h3:      1.15rem;
+  --fs-script:  clamp(1.6rem, 3.5vw, 2.6rem);
+  --fs-body:    0.98rem;
+  --fs-small:   0.85rem;
 
   --lh-tight: 1.15;
-  --lh-body:  1.65;
+  --lh-body:  1.7;
 
   /* --- Відступи --- */
   --space-1: 0.25rem;
@@ -41,18 +47,18 @@
   --space-6: 4rem;
   --space-7: 6rem;
 
-  /* --- Радіуси --- */
-  --radius-s:  6px;
-  --radius-m:  14px;
+  /* --- Радіуси (референси — дуже округлі) --- */
+  --radius-s:  10px;
+  --radius-m:  18px;
   --radius-l:  28px;
   --radius-round: 999px;
 
-  /* --- Тіні --- */
-  --shadow-card: 0 6px 24px rgba(74, 30, 43, 0.08);
-  --shadow-lift: 0 12px 36px rgba(74, 30, 43, 0.16);
+  /* --- Тіні (рожеві, м'які) --- */
+  --shadow-card: 0 8px 28px rgba(219, 39, 119, 0.10);
+  --shadow-lift: 0 14px 40px rgba(162, 28, 175, 0.18);
 
-  /* --- Дзеркальна рамка (підписний елемент) --- */
-  --mirror-ring: 0 0 0 3px var(--c-gold), 0 0 0 10px var(--c-bg), 0 0 0 11px var(--c-rose-line);
+  /* --- «Дзеркальна» рамка — тепер рожево-фіолетове кільце --- */
+  --mirror-ring: 0 0 0 4px #F9A8D4, 0 0 0 12px var(--c-bg), 0 0 0 13px var(--c-line);
 
   /* --- Розміри --- */
   --container: 1160px;

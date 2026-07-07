@@ -484,6 +484,19 @@
     else if (t.id === 'bf-email') state.email = t.value;
     else if (t.id === 'bf-comment') state.comment = t.value;
   });
+  /* Інлайн-валідація по blur: помилка з'являється одразу після втрати фокусу.
+     Порожні поля не чіпаємо — «обов'язковість» перевіряється кнопкою «Далі». */
+  stepContainer.addEventListener('focusout', function (e) {
+    var t = e.target;
+    if (t.id === 'bf-name') {
+      setFieldError('bf-name', t.value.trim() && t.value.trim().length < 2 ? 'Вкажіть ім’я (мінімум 2 символи).' : '');
+    } else if (t.id === 'bf-phone') {
+      setFieldError('bf-phone', t.value.trim() && !isValidUAPhone(t.value) ? 'Вкажіть коректний український номер, напр. 067 123 45 67.' : '');
+    } else if (t.id === 'bf-email') {
+      setFieldError('bf-email', t.value.trim() && !isValidEmail(t.value) ? 'Вкажіть коректний email, напр. name@example.com.' : '');
+    }
+  });
+
   stepContainer.addEventListener('change', function (e) {
     if (e.target.id === 'bf-consent') {
       state.consent = e.target.checked;

@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Галерея робіт до/після — портфоліо салону краси Lumière</title>
   <meta name="description" content="Портфоліо робіт майстрів Lumière: манікюр, фарбування волосся, косметологія, брови та вії у форматі до/після. Оцініть рівень і запишіться онлайн.">
-  <link rel="canonical" href="https://lumiere-salon.example.com/gallery.html">
+  <link rel="canonical" href="https://kopchuk-creator.github.io/Lumiere/gallery.html">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Галерея робіт салону Lumière">
   <meta property="og:description" content="Роботи наших майстрів у форматі до/після: манікюр, волосся, косметологія, брови та вії.">
-  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
-  <meta property="og:url" content="https://lumiere-salon.example.com/gallery.html">
+  <meta property="og:image" content="https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://kopchuk-creator.github.io/Lumiere/gallery.html">
   <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до вмісту</a>
@@ -37,17 +38,22 @@
           <li><a class="nav__link" href="services.html">Послуги</a></li>
           <li><a class="nav__link" href="masters.html">Майстри</a></li>
           <li><a class="nav__link" href="gallery.html" aria-current="page">Галерея</a></li>
+          <li><a class="nav__link" href="shop.html">Крамниця</a></li>
           <li><a class="nav__link" href="contacts.html">Контакти</a></li>
         </ul>
       </nav>
       <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Портфоліо</p>
+        <p class="script-accent">До і після ♡</p>
         <h1>Роботи наших майстрів: <em>до і після</em></h1>
         <p>Перемикайте «До» / «Після» на кожній роботі, щоб побачити результат у «дзеркалі» — так, як його бачить клієнт у кріслі майстра.</p>
       </div>
@@ -68,8 +74,8 @@
           <article class="work" data-category="nails">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-nails-1-before.svg" alt="Нігті до процедури: відросла кутикула, без покриття" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-nails-1-after.svg" alt="Манікюр після: рівне глянцеве покриття гель-лаком" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-nails-1-before.svg'" alt="Нігті до процедури: відросла кутикула, без покриття" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-nails-1-after.svg'" alt="Манікюр після: рівне глянцеве покриття гель-лаком" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -83,8 +89,8 @@
           <article class="work" data-category="nails">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-nails-2-before.svg" alt="Нігті до нарощення: коротка природна довжина" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-nails-2-after.svg" alt="Після нарощення: мигдалеподібна форма з французьким дизайном" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-nails-2-before.svg'" alt="Нігті до нарощення: коротка природна довжина" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-nails-2-after.svg'" alt="Після нарощення: мигдалеподібна форма з французьким дизайном" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -99,8 +105,8 @@
           <article class="work" data-category="hair">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-hair-1-before.svg" alt="Волосся до фарбування: нерівномірний відтінок, відросле коріння" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-hair-1-after.svg" alt="Після AirTouch: плавні світлі переливи по довжині" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-hair-1-before.svg'" alt="Волосся до фарбування: нерівномірний відтінок, відросле коріння" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-hair-1-after.svg'" alt="Після AirTouch: плавні світлі переливи по довжині" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -114,8 +120,8 @@
           <article class="work" data-category="hair">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-hair-2-before.svg" alt="Волосся до процедури: пористе, посічені кінчики" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-hair-2-after.svg" alt="Після ботоксу для волосся: гладке блискуче полотно" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-hair-2-before.svg'" alt="Волосся до процедури: пористе, посічені кінчики" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-hair-2-after.svg'" alt="Після ботоксу для волосся: гладке блискуче полотно" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -130,8 +136,8 @@
           <article class="work" data-category="cosmetology">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-cosmetology-1-before.svg" alt="Шкіра до чистки: розширені пори, нерівний тон" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-cosmetology-1-after.svg" alt="Після чистки обличчя: рівна доглянута шкіра" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-cosmetology-1-before.svg'" alt="Шкіра до чистки: розширені пори, нерівний тон" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-cosmetology-1-after.svg'" alt="Після чистки обличчя: рівна доглянута шкіра" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -145,8 +151,8 @@
           <article class="work" data-category="cosmetology">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-cosmetology-2-before.svg" alt="Шкіра до курсу пілінгів: тьмяний тон, пігментація" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-cosmetology-2-after.svg" alt="Після пілінгу: свіжа сяюча шкіра з рівним тоном" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-cosmetology-2-before.svg'" alt="Шкіра до курсу пілінгів: тьмяний тон, пігментація" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-cosmetology-2-after.svg'" alt="Після пілінгу: свіжа сяюча шкіра з рівним тоном" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -161,8 +167,8 @@
           <article class="work" data-category="brows">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-brows-1-before.svg" alt="Брови до корекції: без форми, неоднорідний колір" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-brows-1-after.svg" alt="Після корекції та фарбування: чітка симетрична форма" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-brows-1-before.svg'" alt="Брови до корекції: без форми, неоднорідний колір" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-brows-1-after.svg'" alt="Після корекції та фарбування: чітка симетрична форма" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -176,8 +182,8 @@
           <article class="work" data-category="brows">
             <div class="mirror">
               <div class="work__imgs">
-                <img src="assets/img/work-brows-2-before.svg" alt="Вії до ламінування: прямі, без вигину" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
-                <img src="assets/img/work-brows-2-after.svg" alt="Після ламінування вій: виразний вигин і насичений колір" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-brows-2-before.svg'" alt="Вії до ламінування: прямі, без вигину" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/work-brows-2-after.svg'" alt="Після ламінування вій: виразний вигин і насичений колір" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
               </div>
             </div>
             <div class="work__toggle" role="group" aria-label="Перемикач до/після">
@@ -214,6 +220,7 @@
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
             <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="shop.html">Крамниця</a></li>
           </ul>
         </div>
         <div>
@@ -233,6 +240,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="shop-data.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>

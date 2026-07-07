@@ -5,23 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Політика конфіденційності — салон краси Lumière</title>
   <meta name="description" content="Політика обробки персональних даних салону краси Lumière: які дані збираємо через форми запису та зворотного зв'язку, як їх використовуємо та захищаємо.">
-  <link rel="canonical" href="https://lumiere-salon.example.com/privacy.html">
+  <link rel="canonical" href="https://kopchuk-creator.github.io/Lumiere/privacy.html">
   <meta name="robots" content="noindex, follow">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Політика конфіденційності — Lumière">
   <meta property="og:description" content="Як салон Lumière обробляє та захищає ваші персональні дані.">
-  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
-  <meta property="og:url" content="https://lumiere-salon.example.com/privacy.html">
+  <meta property="og:image" content="https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://kopchuk-creator.github.io/Lumiere/privacy.html">
   <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до вмісту</a>
@@ -38,10 +39,15 @@
           <li><a class="nav__link" href="services.html">Послуги</a></li>
           <li><a class="nav__link" href="masters.html">Майстри</a></li>
           <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="shop.html">Крамниця</a></li>
           <li><a class="nav__link" href="contacts.html">Контакти</a></li>
         </ul>
       </nav>
       <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
@@ -61,12 +67,14 @@
         <p>Користуючись формами на сайті, ви надаєте добровільну згоду на обробку ваших персональних даних на умовах, викладених нижче.</p>
 
         <h2>2. Які дані ми збираємо</h2>
-        <p>Через форму онлайн-запису та форму зворотного зв’язку ми збираємо лише дані, необхідні для надання послуг:</p>
+        <p>Через форму онлайн-запису, форму зворотного зв’язку та при оформленні замовлення в крамниці ми збираємо лише дані, необхідні для надання послуг:</p>
         <ul>
-          <li><strong>Ім’я</strong> — щоб звертатися до вас та ідентифікувати запис;</li>
+          <li><strong>Ім’я</strong> — щоб звертатися до вас та ідентифікувати запис чи замовлення;</li>
           <li><strong>Номер телефону</strong> — для підтвердження запису та нагадування про візит;</li>
           <li><strong>Адреса електронної пошти</strong> — для надсилання підтвердження запису;</li>
-          <li><strong>Побажання до візиту</strong> (необов’язково) — щоб майстер підготувався до процедури.</li>
+          <li><strong>Побажання до візиту</strong> (необов’язково) — щоб майстер підготувався до процедури;</li>
+          <li><strong>Адреса доставки</strong> — лише при замовленні товарів у крамниці з доставкою, для передачі кур’єрській службі;</li>
+          <li><strong>Обраний спосіб оплати</strong> — при оформленні замовлення в крамниці (готівка при отриманні або картка онлайн). Реквізити картки ми не збираємо і не зберігаємо — оплата проходить на боці платіжного провайдера.</li>
         </ul>
         <p>Ми не збираємо та не обробляємо дані про расове чи етнічне походження, політичні й релігійні переконання, стан здоров’я та інші особливі категорії даних.</p>
 
@@ -119,6 +127,7 @@
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
             <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="shop.html">Крамниця</a></li>
           </ul>
         </div>
         <div>
@@ -138,6 +147,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="shop-data.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>

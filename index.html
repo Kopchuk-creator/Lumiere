@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Салон краси Lumière у Києві — манікюр, волосся, косметологія | Запис онлайн</title>
   <meta name="description" content="Салон краси Lumière в центрі Києва: манікюр і педикюр, стрижки та складне фарбування, косметологія, брови й вії. Онлайн-запис до майстра за 2 хвилини.">
-  <link rel="canonical" href="https://lumiere-salon.example.com/">
+  <link rel="canonical" href="https://kopchuk-creator.github.io/Lumiere/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Салон краси Lumière — краса у кожній деталі">
   <meta property="og:description" content="Манікюр, волосся, косметологія, брови та вії. Онлайн-запис до майстра за 2 хвилини.">
-  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
-  <meta property="og:url" content="https://lumiere-salon.example.com/">
+  <meta property="og:image" content="https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://kopchuk-creator.github.io/Lumiere/">
   <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -19,9 +19,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
 
   <script type="application/ld+json">
   {
@@ -29,8 +30,8 @@
     "@type": "BeautySalon",
     "name": "Lumière",
     "description": "Салон краси в центрі Києва: манікюр, волосся, косметологія, брови та вії.",
-    "url": "https://lumiere-salon.example.com/",
-    "image": "https://lumiere-salon.example.com/assets/img/og-cover.svg",
+    "url": "https://kopchuk-creator.github.io/Lumiere/",
+    "image": "https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg",
     "telephone": "+380671234567",
     "email": "hello@lumiere-salon.example.com",
     "priceRange": "₴₴",
@@ -64,10 +65,15 @@
           <li><a class="nav__link" href="services.html">Послуги</a></li>
           <li><a class="nav__link" href="masters.html">Майстри</a></li>
           <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="shop.html">Крамниця</a></li>
           <li><a class="nav__link" href="contacts.html">Контакти</a></li>
         </ul>
       </nav>
       <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
@@ -76,8 +82,8 @@
     <section class="hero">
       <div class="container hero__grid">
         <div>
-          <p class="eyebrow">Салон краси · Київ</p>
-          <h1 class="display">Краса — у&nbsp;кожній <em>деталі</em></h1>
+          <p class="script-accent">Ласкаво просимо ♡</p>
+          <h1 class="display">Салон краси <em>Lumière</em></h1>
           <p class="hero__lead">Манікюр, який тримається тижнями. Колір волосся, як зі сторінок глянцю. Догляд, після якого шкіра світиться. Запишіться онлайн — це 2 хвилини.</p>
           <div class="hero__actions">
             <a class="btn btn--gold" href="booking.html">Записатись онлайн</a>
@@ -86,11 +92,44 @@
           <p class="hero__note">Працюємо щодня · вул. Ярославів Вал, 12 · <a href="tel:+380671234567">+380 67 123 45 67</a></p>
         </div>
         <div class="mirror mirror--hero">
-          <img src="assets/img/hero-macro.svg" alt="Макрознімок манікюру з глянцевим покриттям — робота майстрів салону Lumière" width="800" height="800" fetchpriority="high">
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/hero-macro.svg'" alt="Макрознімок манікюру з глянцевим покриттям — робота майстрів салону Lumière" width="800" height="800" fetchpriority="high">
           <span class="mirror__caption">роботи наших майстрів</span>
         </div>
       </div>
+      <div class="hero__sticker" aria-hidden="true">Догляд за собою —<br>це необхідність ♡</div>
     </section>
+
+    <!-- Стрічка категорій (круглі іконки, як у референсі) -->
+    <div class="container">
+      <nav class="categories-strip" aria-label="Швидкі переходи за категоріями">
+        <ul>
+          <li><a class="cat-item" href="services.html#nails">
+            <span class="cat-item__circle"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-nails.svg'" alt="" width="76" height="76" loading="lazy"></span>
+            Манікюр
+          </a></li>
+          <li><a class="cat-item" href="services.html#hair">
+            <span class="cat-item__circle"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-hair.svg'" alt="" width="76" height="76" loading="lazy"></span>
+            Волосся
+          </a></li>
+          <li><a class="cat-item" href="services.html#cosmetology">
+            <span class="cat-item__circle"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-cosmetology.svg'" alt="" width="76" height="76" loading="lazy"></span>
+            Косметологія
+          </a></li>
+          <li><a class="cat-item" href="services.html#brows">
+            <span class="cat-item__circle"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-brows.svg'" alt="" width="76" height="76" loading="lazy"></span>
+            Брови та вії
+          </a></li>
+          <li><a class="cat-item" href="gallery.html">
+            <span class="cat-item__circle"><img src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/icon-gallery.svg'" alt="" width="76" height="76" loading="lazy"></span>
+            Галерея
+          </a></li>
+          <li><a class="cat-item" href="booking.html">
+            <span class="cat-item__circle"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/icon-booking.svg'" alt="" width="76" height="76" loading="lazy"></span>
+            Запис онлайн
+          </a></li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Топ-послуги -->
     <section class="section" aria-labelledby="top-services-title">
@@ -102,30 +141,90 @@
         </div>
         <div class="cards-grid">
           <article class="service-card">
+            <div class="service-card__photo">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-nails.svg'" alt="Манікюр з гель-лаком — макрознімок роботи" width="800" height="500" loading="lazy">
+              <span class="num-badge" aria-hidden="true">01</span>
+            </div>
             <h3>Манікюр з гель-лаком</h3>
             <div class="service-card__meta"><span>1 год 30 хв</span><span class="service-card__price">від 650 грн</span></div>
             <p class="service-card__desc">Апаратний манікюр із покриттям гель-лаком, стійкість до 3 тижнів.</p>
             <a class="btn btn--bordo" href="booking.html?service=manicure-gel">Записатись</a>
           </article>
           <article class="service-card">
+            <div class="service-card__photo">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-hair.svg'" alt="Складне фарбування AirTouch — макрознімок роботи" width="800" height="500" loading="lazy">
+              <span class="num-badge" aria-hidden="true">02</span>
+            </div>
             <h3>Складне фарбування AirTouch</h3>
             <div class="service-card__meta"><span>4 год</span><span class="service-card__price">від 2800 грн</span></div>
             <p class="service-card__desc">Плавні переливи кольору з ефектом вигорілого волосся.</p>
             <a class="btn btn--bordo" href="booking.html?service=color-airtouch">Записатись</a>
           </article>
           <article class="service-card">
+            <div class="service-card__photo">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-cosmetology.svg'" alt="Комбінована чистка обличчя — макрознімок процедури" width="800" height="500" loading="lazy">
+              <span class="num-badge" aria-hidden="true">03</span>
+            </div>
             <h3>Комбінована чистка обличчя</h3>
             <div class="service-card__meta"><span>1 год 15 хв</span><span class="service-card__price">від 900 грн</span></div>
             <p class="service-card__desc">Ультразвукова та механічна чистка із заспокійливою маскою.</p>
             <a class="btn btn--bordo" href="booking.html?service=face-cleaning">Записатись</a>
           </article>
           <article class="service-card">
+            <div class="service-card__photo">
+              <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-brows.svg'" alt="Ламінування брів — макрознімок роботи" width="800" height="500" loading="lazy">
+              <span class="num-badge" aria-hidden="true">04</span>
+            </div>
             <h3>Ламінування брів</h3>
             <div class="service-card__meta"><span>1 год</span><span class="service-card__price">від 600 грн</span></div>
             <p class="service-card__desc">Слухняні, доглянуті брови з ефектом укладки до 6 тижнів.</p>
             <a class="btn btn--bordo" href="booking.html?service=brows-lamination">Записатись</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Хіти крамниці -->
+    <section class="section" aria-labelledby="shop-hits-title" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="script-accent">Салонний догляд — додому ♡</p>
+          <h2 id="shop-hits-title">Хіти крамниці</h2>
+          <p>Засоби, якими працюють наші майстри, і сертифікати в подарунок. Доставка по Києву або самовивіз із салону.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="mirror"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/shop-top-coat.svg'" alt="Топове покриття для нігтів Lumière" width="800" height="800" loading="lazy"></div>
+            <h3>Топове покриття для нігтів</h3>
+            <p class="product-card__desc">Глянцевий фініш без сколів до 3 тижнів.</p>
+            <p class="product-card__price">320 грн</p>
+            <button type="button" class="btn btn--bordo" data-add-to-cart="prod_top_coat">У кошик</button>
+          </article>
+          <article class="product-card">
+            <div class="mirror"><img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/shop-hair-serum.svg'" alt="Сироватка для кінчиків волосся" width="800" height="800" loading="lazy"></div>
+            <h3>Сироватка для кінчиків</h3>
+            <p class="product-card__desc">Запаює посічені кінчики, додає блиску без обтяження.</p>
+            <p class="product-card__price">390 грн</p>
+            <button type="button" class="btn btn--bordo" data-add-to-cart="prod_hair_serum">У кошик</button>
+          </article>
+          <article class="product-card">
+            <div class="mirror"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/shop-face-serum.svg'" alt="Сироватка для обличчя з вітаміном C" width="800" height="800" loading="lazy"></div>
+            <h3>Сироватка з вітаміном C</h3>
+            <p class="product-card__desc">Сяйво та рівний тон, антиоксидантний захист шкіри.</p>
+            <p class="product-card__price">750 грн</p>
+            <button type="button" class="btn btn--bordo" data-add-to-cart="prod_face_serum">У кошик</button>
+          </article>
+          <article class="product-card">
+            <div class="mirror"><img src="assets/img/shop-gift-1000.svg" alt="Подарунковий сертифікат Lumière на 1000 гривень" width="800" height="800" loading="lazy"></div>
+            <h3>Сертифікат 1000 грн</h3>
+            <p class="product-card__desc">Діє на будь-яку послугу чи товар салону. Термін дії — 6 місяців.</p>
+            <p class="product-card__price">1000 грн</p>
+            <button type="button" class="btn btn--bordo" data-add-to-cart="prod_gift_1000">У кошик</button>
+          </article>
+        </div>
+        <p style="text-align:center; margin-top: var(--space-5);">
+          <a class="btn btn--ghost" href="shop.html">До крамниці</a>
+        </p>
       </div>
     </section>
 
@@ -139,19 +238,19 @@
         </div>
         <div class="masters-grid">
           <article class="master-card">
-            <div class="mirror"><img src="assets/img/master-olena.svg" alt="Олена Кравець, топ-майстер манікюру" width="400" height="400" loading="lazy"></div>
+            <div class="mirror"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/master-olena.svg'" alt="Олена Кравець, топ-майстер манікюру" width="400" height="400" loading="lazy"></div>
             <h3>Олена Кравець</h3>
             <p class="master-card__role">Топ-майстер манікюру</p>
             <p class="master-card__bio">Чемпіонка Nail Expo 2023, досвід 9 років.</p>
           </article>
           <article class="master-card">
-            <div class="mirror"><img src="assets/img/master-maryna.svg" alt="Марина Шевчук, стиліст-колорист" width="400" height="400" loading="lazy"></div>
+            <div class="mirror"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/master-maryna.svg'" alt="Марина Шевчук, стиліст-колорист" width="400" height="400" loading="lazy"></div>
             <h3>Марина Шевчук</h3>
             <p class="master-card__role">Стиліст-колорист</p>
             <p class="master-card__bio">Технолог Wella та L’Oréal, авторка курсу з AirTouch.</p>
           </article>
           <article class="master-card">
-            <div class="mirror"><img src="assets/img/master-sofia.svg" alt="Софія Гончар, косметолог-естетист" width="400" height="400" loading="lazy"></div>
+            <div class="mirror"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/master-sofia.svg'" alt="Софія Гончар, косметолог-естетист" width="400" height="400" loading="lazy"></div>
             <h3>Софія Гончар</h3>
             <p class="master-card__role">Косметолог-естетист</p>
             <p class="master-card__bio">Медична освіта, досвід 8 років.</p>
@@ -193,12 +292,63 @@
       </div>
     </section>
 
+    <!-- Переваги (стрічка з іконками, як у референсі) -->
+    <section class="section" aria-label="Наші переваги">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 6-9 12L3 9l3-6z"/><path d="M3 9h18M9 3l3 6 3-6M12 21 9 9M12 21l3-12"/></svg>
+            </span>
+            <div><h3>Професіоналізм</h3><p>Досвідчені майстри з профільною освітою.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-4 3-8 8-10 5 2 8 6 8 10a7 7 0 0 1-7 7h-2z"/><path d="M12 21V11"/></svg>
+            </span>
+            <div><h3>Якісні матеріали</h3><p>Працюємо лише на перевірених брендах.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7 7-7z"/></svg>
+            </span>
+            <div><h3>Чистота та безпека</h3><p>Стерилізація інструментів після кожного клієнта.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2z"/></svg>
+            </span>
+            <div><h3>Задоволені гості</h3><p>Ваша краса — наше щастя.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-band">
       <div class="container">
         <h2>Ваш час <em>сяяти</em></h2>
         <p>Оберіть послугу, майстра та зручний час — онлайн, без дзвінків і очікування на лінії.</p>
         <a class="btn btn--gold" href="booking.html">Записатись онлайн</a>
+      </div>
+    </section>
+
+    <!-- Підписка (як «Stay Beautiful, Every Day» у референсі) -->
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter__card">
+          <div>
+            <p class="script-accent">Будьте красивою щодня ♡</p>
+            <h2 id="newsletter-title" style="font-size: 1.4rem;">Поради краси та акції — у вашій пошті</h2>
+            <p style="margin:0; font-size: var(--fs-small);">Жодного спаму — лише сезонні пропозиції та бьюті-поради від майстрів.</p>
+          </div>
+          <form class="newsletter__form" id="newsletter-form" novalidate>
+            <label class="visually-hidden" for="nl-email">Ваш email</label>
+            <input type="email" id="nl-email" name="email" placeholder="Ваш email" autocomplete="email" required>
+            <button type="submit" class="btn btn--gold">Підписатись</button>
+            <p class="newsletter__note" id="nl-note" role="status"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -217,6 +367,7 @@
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
             <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="shop.html">Крамниця</a></li>
           </ul>
         </div>
         <div>
@@ -236,6 +387,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="shop-data.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>

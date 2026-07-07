@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Послуги та ціни — манікюр, волосся, косметологія, брови | Салон Lumière</title>
   <meta name="description" content="Каталог послуг салону Lumière з цінами: манікюр і педикюр від 450 грн, стрижки та фарбування, косметологія, брови та вії. Запис онлайн до обраного майстра.">
-  <link rel="canonical" href="https://lumiere-salon.example.com/services.html">
+  <link rel="canonical" href="https://kopchuk-creator.github.io/Lumiere/services.html">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Послуги та ціни салону Lumière">
   <meta property="og:description" content="Манікюр і педикюр, волосся, косметологія, брови та вії — повний каталог із цінами та тривалістю.">
-  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
-  <meta property="og:url" content="https://lumiere-salon.example.com/services.html">
+  <meta property="og:image" content="https://kopchuk-creator.github.io/Lumiere/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://kopchuk-creator.github.io/Lumiere/services.html">
   <meta property="og:locale" content="uk_UA">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до вмісту</a>
@@ -37,17 +38,22 @@
           <li><a class="nav__link" href="services.html" aria-current="page">Послуги</a></li>
           <li><a class="nav__link" href="masters.html">Майстри</a></li>
           <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="shop.html">Крамниця</a></li>
           <li><a class="nav__link" href="contacts.html">Контакти</a></li>
         </ul>
       </nav>
       <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
     </div>
   </header>
 
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Каталог</p>
+        <p class="script-accent">Наші послуги ♡</p>
         <h1>Послуги та <em>ціни</em></h1>
         <p>Ціни вказані «від» — фінальна вартість залежить від довжини волосся, стану нігтів чи обраних матеріалів. Натисніть «Записатись» біля послуги — вона одразу підставиться у форму запису.</p>
         <ul class="category-tabs" aria-label="Категорії послуг">
@@ -208,6 +214,7 @@
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
             <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="shop.html">Крамниця</a></li>
           </ul>
         </div>
         <div>
@@ -227,6 +234,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="shop-data.js"></script>
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>

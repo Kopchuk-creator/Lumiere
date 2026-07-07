@@ -52,6 +52,30 @@
     });
   });
 
+  /* --- Підписка на розсилку (головна). Точка інтеграції: email → сервіс розсилок --- */
+  var nlForm = document.getElementById('newsletter-form');
+  if (nlForm) {
+    nlForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = document.getElementById('nl-email');
+      var note = document.getElementById('nl-note');
+      var email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        note.textContent = 'Вкажіть коректний email, напр. name@example.com.';
+        note.style.color = 'var(--c-error)';
+        note.classList.add('is-visible');
+        input.focus();
+        return;
+      }
+      /* Точка інтеграції: сюди підключається сервіс розсилок */
+      console.log('NEWSLETTER_PAYLOAD', JSON.stringify({ email: email }));
+      nlForm.reset();
+      note.textContent = 'Дякуємо! Ви підписані на бьюті-поради Lumière ♡';
+      note.style.color = 'var(--c-success)';
+      note.classList.add('is-visible');
+    });
+  }
+
   /* --- Поточний рік у футері --- */
   var yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

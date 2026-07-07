@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /privacy.html
 
-Sitemap: https://lumiere-salon.example.com/sitemap.xml
+Sitemap: https://kopchuk-creator.github.io/Lumiere/sitemap.xml

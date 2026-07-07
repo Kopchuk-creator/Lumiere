@@ -1,0 +1,308 @@
+/* ============================================
+   Lumière Shop — стилі крамниці та кошика.
+   Панель кошика — «елегантна косметичка»:
+   м'який рожевий футляр, білі заокруглені
+   картки товарів, градієнтна кнопка оформлення.
+   ============================================ */
+
+/* ---------- Іконка кошика в хедері ---------- */
+.cart-toggle {
+  position: relative;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-pink);
+  background: var(--c-card);
+  color: var(--c-pink-deep);
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
+}
+.cart-toggle:hover { background: var(--c-pink-deep); border-color: var(--c-pink-deep); color: #fff; transform: translateY(-1px); }
+.cart-badge {
+  position: absolute; top: -6px; right: -6px;
+  min-width: 20px; height: 20px;
+  padding: 0 5px;
+  border-radius: var(--radius-round);
+  background: var(--grad-main);
+  color: #fff;
+  font-size: 0.72rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(162, 28, 175, 0.4);
+}
+.cart-badge[hidden] { display: none; }
+
+/* ---------- Оверлей і панель ---------- */
+.cart-overlay {
+  position: fixed; inset: 0;
+  background: rgba(76, 29, 149, 0.35);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-med);
+  z-index: 300;
+}
+.cart-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+.cart-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(430px, 100vw);
+  background: var(--c-bg);
+  border-radius: var(--radius-l) 0 0 var(--radius-l);
+  box-shadow: -18px 0 50px rgba(76, 29, 149, 0.25);
+  transform: translateX(105%);
+  transition: transform var(--t-med) var(--ease);
+  z-index: 310;
+  display: flex; flex-direction: column;
+}
+.cart-drawer.is-open { transform: translateX(0); }
+
+.cart-drawer__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-bottom: 1px dashed var(--c-line);
+}
+.cart-drawer__title {
+  font-family: var(--font-script);
+  font-size: 1.7rem;
+  color: var(--c-pink-deep);
+  margin: 0;
+}
+.cart-close {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-line);
+  background: var(--c-card);
+  color: var(--c-purple-deep);
+  font-size: 1.1rem; line-height: 1;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.cart-close:hover { background: var(--c-pink-deep); border-color: var(--c-pink-deep); color: #fff; }
+
+.cart-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3) var(--space-4);
+}
+.cart-drawer__foot {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-top: 1px dashed var(--c-line);
+  background: var(--c-bg-soft);
+  border-radius: 0 0 0 var(--radius-l);
+}
+
+/* ---------- Порожній кошик ---------- */
+.cart-empty { text-align: center; padding: var(--space-6) var(--space-3); color: #6B5B7A; }
+.cart-empty .cart-empty__icon {
+  width: 72px; height: 72px;
+  margin: 0 auto var(--space-3);
+  border-radius: 50%;
+  background: var(--c-bg-soft);
+  color: var(--c-pink);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ---------- Позиція в кошику ---------- */
+.cart-item {
+  display: flex; gap: var(--space-3); align-items: center;
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.cart-item__img {
+  width: 56px; height: 56px; flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px #F9A8D4;
+}
+.cart-item__img img { width: 100%; height: 100%; object-fit: cover; }
+.cart-item__info { flex: 1; min-width: 0; }
+.cart-item__name {
+  font-weight: 600; font-size: 0.88rem; color: var(--c-purple-deep);
+  margin: 0 0 2px;
+}
+.cart-item__price { font-size: var(--fs-small); color: var(--c-pink-deep); margin: 0; font-weight: 600; }
+
+.cart-qty { display: flex; align-items: center; gap: 6px; }
+.qty-btn {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-pink);
+  background: var(--c-card);
+  color: var(--c-pink-deep);
+  font-size: 1rem; line-height: 1; font-weight: 600;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.qty-btn:hover { background: var(--c-pink-deep); border-color: var(--c-pink-deep); color: #fff; }
+.cart-qty__num { min-width: 20px; text-align: center; font-weight: 600; font-size: 0.92rem; }
+
+.cart-item__remove {
+  background: none; border: 0; cursor: pointer;
+  color: #8A7A96; font-size: 1rem; padding: 6px;
+  border-radius: 50%;
+  transition: color var(--t-fast);
+}
+.cart-item__remove:hover { color: var(--c-error); }
+
+/* ---------- Підсумок ---------- */
+.cart-total {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: var(--space-3);
+}
+.cart-total__label { font-size: 0.9rem; color: #6B5B7A; }
+.cart-total__sum {
+  font-family: var(--font-serif);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--c-purple-deep);
+}
+.cart-drawer__foot .btn { width: 100%; }
+.cart-continue {
+  display: block; text-align: center;
+  margin-top: var(--space-2);
+  font-size: var(--fs-small);
+  background: none; border: 0; cursor: pointer;
+  color: var(--c-pink-deep);
+  text-decoration: underline; text-underline-offset: 3px;
+  font-family: var(--font-sans);
+  width: 100%;
+}
+.cart-continue:hover { color: var(--c-purple-deep); }
+
+/* ---------- Чекаут ---------- */
+.cart-drawer .form-field { margin-bottom: var(--space-3); }
+.cart-drawer .checkbox-field { margin-bottom: var(--space-3); }
+
+.mode-switch {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.mode-switch label {
+  display: block;
+  text-align: center;
+  border: 1.5px solid var(--c-line);
+  border-radius: var(--radius-round);
+  background: var(--c-card);
+  color: var(--c-ink);
+  font-size: 0.88rem; font-weight: 500;
+  padding: 0.6em 0.5em;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.mode-switch input { position: absolute; opacity: 0; pointer-events: none; }
+.mode-switch input:checked + label {
+  background: var(--grad-main);
+  border-color: transparent;
+  color: #fff;
+}
+.mode-switch input:focus-visible + label { outline: 3px solid var(--c-purple); outline-offset: 2px; }
+
+.pay-options { margin-bottom: var(--space-3); }
+.pay-options .radio-row {
+  display: flex; gap: var(--space-2); align-items: flex-start;
+  background: var(--c-card);
+  border: 1.5px solid var(--c-line);
+  border-radius: var(--radius-m);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+}
+.pay-options .radio-row input { accent-color: var(--c-pink-deep); margin-top: 0.3em; }
+.pay-options .radio-row span { font-size: 0.9rem; }
+.pay-hint { font-size: var(--fs-small); color: #6B5B7A; margin: 0 0 var(--space-2); }
+
+.checkout-back {
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--font-sans); font-size: var(--fs-small); font-weight: 600;
+  color: var(--c-pink-deep);
+  padding: 0 0 var(--space-2);
+}
+.checkout-back:hover { color: var(--c-purple-deep); }
+.checkout-legend {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--c-purple-deep);
+  padding: 0; margin-bottom: var(--space-3);
+}
+.cart-drawer fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+
+/* ---------- Підтвердження ---------- */
+.order-success { text-align: center; padding: var(--space-4) 0; }
+.order-success__icon {
+  width: 72px; height: 72px;
+  margin: 0 auto var(--space-3);
+  border-radius: 50%;
+  background: var(--grad-main);
+  color: #fff; font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 4px #F9A8D4, 0 0 0 10px var(--c-bg);
+}
+.order-success__num {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--c-purple-deep);
+  background: var(--c-card);
+  border: 1px dashed var(--c-pink);
+  border-radius: var(--radius-round);
+  padding: 0.3em 1em;
+  margin-bottom: var(--space-3);
+}
+.order-success__list {
+  text-align: left;
+  list-style: none; margin: 0 0 var(--space-3); padding: 0;
+}
+.order-success__list li {
+  display: flex; justify-content: space-between; gap: var(--space-2);
+  font-size: var(--fs-small);
+  padding: 0.4em 0;
+  border-bottom: 1px dashed var(--c-line);
+}
+
+/* ---------- Сторінка крамниці та «хіти» на головній ---------- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-5) var(--space-4);
+}
+.product-card {
+  text-align: center;
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+  display: flex; flex-direction: column; align-items: center;
+  transition: transform var(--t-med) var(--ease), box-shadow var(--t-med);
+}
+.product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+.product-card .mirror {
+  width: 140px;
+  margin: 0 auto var(--space-3);
+  box-shadow: 0 0 0 3px #F9A8D4, 0 0 0 9px var(--c-card), 0 0 0 10px var(--c-line);
+}
+.product-card h3 { font-size: 1rem; margin-bottom: var(--space-1); color: var(--c-purple-deep); }
+.product-card__desc { flex: 1; font-size: var(--fs-small); color: #5C4B6B; margin-bottom: var(--space-3); }
+.product-card__price {
+  font-family: var(--font-serif);
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--c-pink-deep);
+  margin-bottom: var(--space-3);
+}
+.product-card .btn { width: 100%; }
+.product-card .btn.is-added { background: var(--c-success); color: #fff; border-color: transparent; }
+
+@media (max-width: 720px) {
+  .cart-drawer { width: 100vw; border-radius: 0; }
+  .cart-drawer__foot { border-radius: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cart-drawer, .cart-overlay { transition: none; }
+}
