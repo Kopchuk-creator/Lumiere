@@ -1,0 +1,65 @@
+/* ============================================
+   Lumière — дизайн-токени
+   Глем/редакційна бьюті-естетика (глянцевий журнал)
+   ============================================ */
+
+:root {
+  /* --- Палітра --- */
+  --c-bg:        #FBEAE5; /* пудрово-рожевий фон */
+  --c-bordo:     #4A1E2B; /* бордо — акценти, заголовки */
+  --c-gold:      #C9A24B; /* приглушене золото — CTA, декор */
+  --c-gold-deep: #7A5C22; /* темне золото — текстові лінки на світлому (≈5.3:1, WCAG AA) */
+  --c-ink:       #2E2A28; /* майже чорний — основний текст */
+  --c-cream:     #F5F0EC; /* теплий кремовий — картки */
+
+  --c-bordo-soft: #6B3242;
+  --c-rose-line:  #E9CFC6; /* тонкі лінії/бордери на пудровому */
+  --c-white:      #FFFFFF;
+  --c-error:      #A6252F;
+  --c-success:    #2F6B3A;
+
+  /* --- Типографіка --- */
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans:  "Manrope", "Segoe UI", system-ui, sans-serif;
+
+  --fs-display: clamp(2.4rem, 6vw, 4.4rem);
+  --fs-h1:      clamp(2rem, 4.5vw, 3.2rem);
+  --fs-h2:      clamp(1.6rem, 3.2vw, 2.3rem);
+  --fs-h3:      1.25rem;
+  --fs-body:    1rem;
+  --fs-small:   0.875rem;
+
+  --lh-tight: 1.15;
+  --lh-body:  1.65;
+
+  /* --- Відступи --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* --- Радіуси --- */
+  --radius-s:  6px;
+  --radius-m:  14px;
+  --radius-l:  28px;
+  --radius-round: 999px;
+
+  /* --- Тіні --- */
+  --shadow-card: 0 6px 24px rgba(74, 30, 43, 0.08);
+  --shadow-lift: 0 12px 36px rgba(74, 30, 43, 0.16);
+
+  /* --- Дзеркальна рамка (підписний елемент) --- */
+  --mirror-ring: 0 0 0 3px var(--c-gold), 0 0 0 10px var(--c-bg), 0 0 0 11px var(--c-rose-line);
+
+  /* --- Розміри --- */
+  --container: 1160px;
+  --header-h: 76px;
+
+  /* --- Анімація --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.18s;
+  --t-med:  0.35s;
+}
