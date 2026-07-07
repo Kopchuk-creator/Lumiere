@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея робіт до/після — портфоліо салону краси Lumière</title>
+  <meta name="description" content="Портфоліо робіт майстрів Lumière: манікюр, фарбування волосся, косметологія, брови та вії у форматі до/після. Оцініть рівень і запишіться онлайн.">
+  <link rel="canonical" href="https://lumiere-salon.example.com/gallery.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Галерея робіт салону Lumière">
+  <meta property="og:description" content="Роботи наших майстрів у форматі до/після: манікюр, волосся, косметологія, брови та вії.">
+  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://lumiere-salon.example.com/gallery.html">
+  <meta property="og:locale" content="uk_UA">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Lumi<span>è</span>re</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Головна</a></li>
+          <li><a class="nav__link" href="services.html">Послуги</a></li>
+          <li><a class="nav__link" href="masters.html">Майстри</a></li>
+          <li><a class="nav__link" href="gallery.html" aria-current="page">Галерея</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Портфоліо</p>
+        <h1>Роботи наших майстрів: <em>до і після</em></h1>
+        <p>Перемикайте «До» / «Після» на кожній роботі, щоб побачити результат у «дзеркалі» — так, як його бачить клієнт у кріслі майстра.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;" aria-label="Галерея робіт">
+      <div class="container">
+        <div class="gallery-filters" role="group" aria-label="Фільтр робіт за категорією">
+          <button class="chip" data-filter="all" aria-pressed="true">Усі роботи</button>
+          <button class="chip" data-filter="nails" aria-pressed="false">Манікюр</button>
+          <button class="chip" data-filter="hair" aria-pressed="false">Волосся</button>
+          <button class="chip" data-filter="cosmetology" aria-pressed="false">Косметологія</button>
+          <button class="chip" data-filter="brows" aria-pressed="false">Брови та вії</button>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Манікюр -->
+          <article class="work" data-category="nails">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-nails-1-before.svg" alt="Нігті до процедури: відросла кутикула, без покриття" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-nails-1-after.svg" alt="Манікюр після: рівне глянцеве покриття гель-лаком" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Манікюр з гель-лаком</p>
+            <p class="work__master">майстер — Олена Кравець</p>
+          </article>
+
+          <article class="work" data-category="nails">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-nails-2-before.svg" alt="Нігті до нарощення: коротка природна довжина" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-nails-2-after.svg" alt="Після нарощення: мигдалеподібна форма з французьким дизайном" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Нарощення нігтів</p>
+            <p class="work__master">майстер — Олена Кравець</p>
+          </article>
+
+          <!-- Волосся -->
+          <article class="work" data-category="hair">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-hair-1-before.svg" alt="Волосся до фарбування: нерівномірний відтінок, відросле коріння" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-hair-1-after.svg" alt="Після AirTouch: плавні світлі переливи по довжині" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Складне фарбування AirTouch</p>
+            <p class="work__master">майстер — Марина Шевчук</p>
+          </article>
+
+          <article class="work" data-category="hair">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-hair-2-before.svg" alt="Волосся до процедури: пористе, посічені кінчики" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-hair-2-after.svg" alt="Після ботоксу для волосся: гладке блискуче полотно" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Ботокс для волосся</p>
+            <p class="work__master">майстер — Дар’я Романюк</p>
+          </article>
+
+          <!-- Косметологія -->
+          <article class="work" data-category="cosmetology">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-cosmetology-1-before.svg" alt="Шкіра до чистки: розширені пори, нерівний тон" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-cosmetology-1-after.svg" alt="Після чистки обличчя: рівна доглянута шкіра" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Комбінована чистка обличчя</p>
+            <p class="work__master">майстер — Софія Гончар</p>
+          </article>
+
+          <article class="work" data-category="cosmetology">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-cosmetology-2-before.svg" alt="Шкіра до курсу пілінгів: тьмяний тон, пігментація" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-cosmetology-2-after.svg" alt="Після пілінгу: свіжа сяюча шкіра з рівним тоном" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Хімічний пілінг</p>
+            <p class="work__master">майстер — Софія Гончар</p>
+          </article>
+
+          <!-- Брови та вії -->
+          <article class="work" data-category="brows">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-brows-1-before.svg" alt="Брови до корекції: без форми, неоднорідний колір" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-brows-1-after.svg" alt="Після корекції та фарбування: чітка симетрична форма" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Корекція та фарбування брів</p>
+            <p class="work__master">майстер — Катерина Білан</p>
+          </article>
+
+          <article class="work" data-category="brows">
+            <div class="mirror">
+              <div class="work__imgs">
+                <img src="assets/img/work-brows-2-before.svg" alt="Вії до ламінування: прямі, без вигину" data-role="before" data-state="hidden" width="800" height="800" loading="lazy">
+                <img src="assets/img/work-brows-2-after.svg" alt="Після ламінування вій: виразний вигин і насичений колір" data-role="after" data-state="visible" width="800" height="800" loading="lazy">
+              </div>
+            </div>
+            <div class="work__toggle" role="group" aria-label="Перемикач до/після">
+              <button type="button" data-state="before" aria-pressed="false">До</button>
+              <button type="button" data-state="after" aria-pressed="true">Після</button>
+            </div>
+            <p class="work__title">Ламінування вій</p>
+            <p class="work__master">майстер — Катерина Білан</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Хочете такий самий <em>результат</em>?</h2>
+        <p>Запишіться до майстра, чия робота вам сподобалась — онлайн за 2 хвилини.</p>
+        <a class="btn btn--gold" href="booking.html">Записатись онлайн</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html">Lumi<span>è</span>re</a>
+          <p style="margin-top: var(--space-3);">Салон краси в центрі Києва. Манікюр, волосся, косметологія, брови та вії — з любов’ю до деталей.</p>
+        </div>
+        <div>
+          <h4>Навігація</h4>
+          <ul>
+            <li><a href="services.html">Послуги та ціни</a></li>
+            <li><a href="masters.html">Майстри</a></li>
+            <li><a href="gallery.html">Галерея робіт</a></li>
+            <li><a href="booking.html">Онлайн-запис</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакти</h4>
+          <ul>
+            <li>вул. Ярославів Вал, 12, Київ</li>
+            <li><a href="tel:+380671234567">+380 67 123 45 67</a></li>
+            <li><a href="mailto:hello@lumiere-salon.example.com">hello@lumiere-salon.example.com</a></li>
+            <li>Пн–Пт 9:00–20:00 · Сб 10:00–19:00 · Нд 10:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="footer-year">2026</span> Салон краси Lumière</p>
+        <p><a href="privacy.html">Політика конфіденційності</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

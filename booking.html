@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онлайн-запис до салону краси Lumière — оберіть послугу, майстра і час</title>
+  <meta name="description" content="Запишіться до салону Lumière онлайн за 2 хвилини: оберіть послугу, майстра, зручну дату та час. Адміністратор передзвонить для підтвердження.">
+  <link rel="canonical" href="https://lumiere-salon.example.com/booking.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Онлайн-запис — салон краси Lumière">
+  <meta property="og:description" content="Оберіть послугу, майстра та зручний час онлайн — без дзвінків і очікування.">
+  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://lumiere-salon.example.com/booking.html">
+  <meta property="og:locale" content="uk_UA">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Lumi<span>è</span>re</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Головна</a></li>
+          <li><a class="nav__link" href="services.html">Послуги</a></li>
+          <li><a class="nav__link" href="masters.html">Майстри</a></li>
+          <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--gold header__cta" href="booking.html" aria-current="page">Записатись</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container booking-wrap">
+        <p class="eyebrow">Онлайн-запис</p>
+        <h1>Запис за <em>2 хвилини</em></h1>
+        <p>П’ять простих кроків: послуга → майстер → дата і час → контакти → перевірка. Кнопка «Назад» не стирає введені дані.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;" aria-label="Форма запису">
+      <div class="container booking-wrap">
+        <ol class="progress" id="booking-progress" aria-label="Кроки запису">
+          <li aria-current="step">Послуга</li>
+          <li>Майстер</li>
+          <li>Дата і час</li>
+          <li>Контакти</li>
+          <li>Перевірка</li>
+        </ol>
+
+        <p id="step-announcer" class="visually-hidden" aria-live="polite"></p>
+
+        <form id="booking-form" novalidate>
+          <div class="booking-step" id="step-container">
+            <noscript>
+              <p>Для онлайн-запису потрібен увімкнений JavaScript. Або зателефонуйте нам:
+                <a href="tel:+380671234567">+380 67 123 45 67</a></p>
+            </noscript>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html">Lumi<span>è</span>re</a>
+          <p style="margin-top: var(--space-3);">Салон краси в центрі Києва. Манікюр, волосся, косметологія, брови та вії — з любов’ю до деталей.</p>
+        </div>
+        <div>
+          <h4>Навігація</h4>
+          <ul>
+            <li><a href="services.html">Послуги та ціни</a></li>
+            <li><a href="masters.html">Майстри</a></li>
+            <li><a href="gallery.html">Галерея робіт</a></li>
+            <li><a href="booking.html">Онлайн-запис</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакти</h4>
+          <ul>
+            <li>вул. Ярославів Вал, 12, Київ</li>
+            <li><a href="tel:+380671234567">+380 67 123 45 67</a></li>
+            <li><a href="mailto:hello@lumiere-salon.example.com">hello@lumiere-salon.example.com</a></li>
+            <li>Пн–Пт 9:00–20:00 · Сб 10:00–19:00 · Нд 10:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="footer-year">2026</span> Салон краси Lumière</p>
+        <p><a href="privacy.html">Політика конфіденційності</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

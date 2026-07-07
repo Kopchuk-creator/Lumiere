@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Послуги та ціни — манікюр, волосся, косметологія, брови | Салон Lumière</title>
+  <meta name="description" content="Каталог послуг салону Lumière з цінами: манікюр і педикюр від 450 грн, стрижки та фарбування, косметологія, брови та вії. Запис онлайн до обраного майстра.">
+  <link rel="canonical" href="https://lumiere-salon.example.com/services.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Послуги та ціни салону Lumière">
+  <meta property="og:description" content="Манікюр і педикюр, волосся, косметологія, брови та вії — повний каталог із цінами та тривалістю.">
+  <meta property="og:image" content="https://lumiere-salon.example.com/assets/img/og-cover.svg">
+  <meta property="og:url" content="https://lumiere-salon.example.com/services.html">
+  <meta property="og:locale" content="uk_UA">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Lumi<span>è</span>re</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Головна</a></li>
+          <li><a class="nav__link" href="services.html" aria-current="page">Послуги</a></li>
+          <li><a class="nav__link" href="masters.html">Майстри</a></li>
+          <li><a class="nav__link" href="gallery.html">Галерея</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Каталог</p>
+        <h1>Послуги та <em>ціни</em></h1>
+        <p>Ціни вказані «від» — фінальна вартість залежить від довжини волосся, стану нігтів чи обраних матеріалів. Натисніть «Записатись» біля послуги — вона одразу підставиться у форму запису.</p>
+        <ul class="category-tabs" aria-label="Категорії послуг">
+          <li><a href="#nails">Манікюр і педикюр</a></li>
+          <li><a href="#hair">Волосся</a></li>
+          <li><a href="#cosmetology">Косметологія</a></li>
+          <li><a href="#brows">Брови та вії</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Манікюр і педикюр -->
+      <section class="category-block" id="nails" aria-labelledby="nails-title">
+        <h2 id="nails-title">Манікюр і педикюр <em>ідеальні лінії кутикули та стійке покриття</em></h2>
+        <div class="cards-grid">
+          <article class="service-card">
+            <h3>Класичний манікюр</h3>
+            <div class="service-card__meta"><span>1 год</span><span class="service-card__price">від 450 грн</span></div>
+            <p class="service-card__desc">Обробка кутикули, надання форми, полірування та живильна олійка.</p>
+            <a class="btn btn--bordo" href="booking.html?service=manicure-classic">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Манікюр з гель-лаком</h3>
+            <div class="service-card__meta"><span>1 год 30 хв</span><span class="service-card__price">від 650 грн</span></div>
+            <p class="service-card__desc">Апаратний манікюр із покриттям гель-лаком, стійкість до 3 тижнів.</p>
+            <a class="btn btn--bordo" href="booking.html?service=manicure-gel">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Нарощення нігтів</h3>
+            <div class="service-card__meta"><span>2 год 30 хв</span><span class="service-card__price">від 950 грн</span></div>
+            <p class="service-card__desc">Моделювання гелем на верхніх формах, будь-яка довжина та дизайн.</p>
+            <a class="btn btn--bordo" href="booking.html?service=nails-extension">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Апаратний педикюр</h3>
+            <div class="service-card__meta"><span>1 год 30 хв</span><span class="service-card__price">від 700 грн</span></div>
+            <p class="service-card__desc">Делікатна апаратна обробка стоп та покриття гель-лаком.</p>
+            <a class="btn btn--bordo" href="booking.html?service=pedicure-apparatus">Записатись</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Волосся -->
+      <section class="category-block" id="hair" aria-labelledby="hair-title">
+        <h2 id="hair-title">Волосся <em>стрижки, складне фарбування та відновлення</em></h2>
+        <div class="cards-grid">
+          <article class="service-card">
+            <h3>Жіноча стрижка</h3>
+            <div class="service-card__meta"><span>1 год</span><span class="service-card__price">від 550 грн</span></div>
+            <p class="service-card__desc">Стрижка з урахуванням структури волосся, миття та укладка включені.</p>
+            <a class="btn btn--bordo" href="booking.html?service=haircut-women">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Фарбування в один тон</h3>
+            <div class="service-card__meta"><span>2 год 30 хв</span><span class="service-card__price">від 1400 грн</span></div>
+            <p class="service-card__desc">Стійке фарбування преміальними барвниками з доглядом після процедури.</p>
+            <a class="btn btn--bordo" href="booking.html?service=color-one-tone">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Складне фарбування AirTouch</h3>
+            <div class="service-card__meta"><span>4 год</span><span class="service-card__price">від 2800 грн</span></div>
+            <p class="service-card__desc">Плавні переливи кольору з ефектом вигорілого волосся. Ціна від довжини.</p>
+            <a class="btn btn--bordo" href="booking.html?service=color-airtouch">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Укладка</h3>
+            <div class="service-card__meta"><span>45 хв</span><span class="service-card__price">від 400 грн</span></div>
+            <p class="service-card__desc">Локони, гладка укладка або текстурні хвилі під вашу подію.</p>
+            <a class="btn btn--bordo" href="booking.html?service=styling">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Ботокс для волосся</h3>
+            <div class="service-card__meta"><span>1 год 30 хв</span><span class="service-card__price">від 1200 грн</span></div>
+            <p class="service-card__desc">Глибоке відновлення структури: блиск, гладкість, зволоження.</p>
+            <a class="btn btn--bordo" href="booking.html?service=hair-botox">Записатись</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Косметологія -->
+      <section class="category-block" id="cosmetology" aria-labelledby="cosmetology-title">
+        <h2 id="cosmetology-title">Косметологія <em>догляд за шкірою обличчя на професійних засобах</em></h2>
+        <div class="cards-grid">
+          <article class="service-card">
+            <h3>Комбінована чистка обличчя</h3>
+            <div class="service-card__meta"><span>1 год 15 хв</span><span class="service-card__price">від 900 грн</span></div>
+            <p class="service-card__desc">Ультразвукова та механічна чистка із заспокійливою маскою.</p>
+            <a class="btn btn--bordo" href="booking.html?service=face-cleaning">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Масаж обличчя</h3>
+            <div class="service-card__meta"><span>50 хв</span><span class="service-card__price">від 600 грн</span></div>
+            <p class="service-card__desc">Скульптурний масаж: ліфтинг-ефект, зняття напруги, здоровий колір.</p>
+            <a class="btn btn--bordo" href="booking.html?service=face-massage">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Хімічний пілінг</h3>
+            <div class="service-card__meta"><span>45 хв</span><span class="service-card__price">від 800 грн</span></div>
+            <p class="service-card__desc">М’яке оновлення шкіри кислотами, підбір протоколу за типом шкіри.</p>
+            <a class="btn btn--bordo" href="booking.html?service=peeling">Записатись</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Брови та вії -->
+      <section class="category-block" id="brows" aria-labelledby="brows-title">
+        <h2 id="brows-title">Брови та вії <em>архітектура погляду: форма, колір, ламінування</em></h2>
+        <div class="cards-grid">
+          <article class="service-card">
+            <h3>Корекція та фарбування брів</h3>
+            <div class="service-card__meta"><span>40 хв</span><span class="service-card__price">від 350 грн</span></div>
+            <p class="service-card__desc">Архітектура брів: підбір форми, корекція воском, фарбування хною або фарбою.</p>
+            <a class="btn btn--bordo" href="booking.html?service=brows-shape">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Ламінування брів</h3>
+            <div class="service-card__meta"><span>1 год</span><span class="service-card__price">від 600 грн</span></div>
+            <p class="service-card__desc">Слухняні, доглянуті брови з ефектом укладки до 6 тижнів.</p>
+            <a class="btn btn--bordo" href="booking.html?service=brows-lamination">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Ламінування вій</h3>
+            <div class="service-card__meta"><span>1 год 15 хв</span><span class="service-card__price">від 650 грн</span></div>
+            <p class="service-card__desc">Вигин, колір і живлення власних вій без нарощення.</p>
+            <a class="btn btn--bordo" href="booking.html?service=lashes-lamination">Записатись</a>
+          </article>
+          <article class="service-card">
+            <h3>Нарощення вій</h3>
+            <div class="service-card__meta"><span>2 год</span><span class="service-card__price">від 900 грн</span></div>
+            <p class="service-card__desc">Класика або 2D — природний об’єм, підбір вигину під форму ока.</p>
+            <a class="btn btn--bordo" href="booking.html?service=lashes-extension">Записатись</a>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="cta-band" style="margin-top: var(--space-6);">
+      <div class="container">
+        <h2>Не знайшли <em>свою</em> послугу?</h2>
+        <p>Зателефонуйте нам — підкажемо, що підійде саме вам, і підберемо майстра.</p>
+        <a class="btn btn--gold" href="contacts.html">Зв’язатися з нами</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html">Lumi<span>è</span>re</a>
+          <p style="margin-top: var(--space-3);">Салон краси в центрі Києва. Манікюр, волосся, косметологія, брови та вії — з любов’ю до деталей.</p>
+        </div>
+        <div>
+          <h4>Навігація</h4>
+          <ul>
+            <li><a href="services.html">Послуги та ціни</a></li>
+            <li><a href="masters.html">Майстри</a></li>
+            <li><a href="gallery.html">Галерея робіт</a></li>
+            <li><a href="booking.html">Онлайн-запис</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Контакти</h4>
+          <ul>
+            <li>вул. Ярославів Вал, 12, Київ</li>
+            <li><a href="tel:+380671234567">+380 67 123 45 67</a></li>
+            <li><a href="mailto:hello@lumiere-salon.example.com">hello@lumiere-salon.example.com</a></li>
+            <li>Пн–Пт 9:00–20:00 · Сб 10:00–19:00 · Нд 10:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="footer-year">2026</span> Салон краси Lumière</p>
+        <p><a href="privacy.html">Політика конфіденційності</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
