@@ -125,33 +125,70 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div>
+
+        <div class="footer__brand">
           <a class="logo" href="index.html">Lumi<span>è</span>re</a>
-          <p style="margin-top: var(--space-3);">Салон краси в центрі Києва. Манікюр, волосся, косметологія, брови та вії — з любов’ю до деталей.</p>
+          <p class="footer__tagline">Краса — у кожній деталі ♡</p>
+          <p>Салон краси в центрі Києва. Манікюр, волосся, косметологія, брови та вії — з любов’ю до деталей.</p>
+          <ul class="socials" aria-label="Ми в соцмережах">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram салону Lumière">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook салону Lumière">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2h-3a4 4 0 0 0-4 4v3H5v4h3v9h4v-9h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/></svg>
+            </a></li>
+            <li><a href="https://t.me" target="_blank" rel="noopener" aria-label="Telegram салону Lumière">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3 2 10.5l6 2.5L10.5 21 14 15l6 5z"/><path d="M8 13l12-10"/></svg>
+            </a></li>
+            <li><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok салону Lumière">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M15 6a5 5 0 0 0 5 4"/></svg>
+            </a></li>
+          </ul>
         </div>
+
         <div>
           <h4>Навігація</h4>
-          <ul>
+          <ul class="footer__links">
             <li><a href="services.html">Послуги та ціни</a></li>
             <li><a href="masters.html">Майстри</a></li>
             <li><a href="gallery.html">Галерея робіт</a></li>
-            <li><a href="booking.html">Онлайн-запис</a></li>
             <li><a href="shop.html">Крамниця</a></li>
+            <li><a href="booking.html">Онлайн-запис</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
           </ul>
         </div>
-        <div>
+
+        <div class="footer__contacts">
           <h4>Контакти</h4>
-          <ul>
-            <li>вул. Ярославів Вал, 12, Київ</li>
-            <li><a href="tel:+380671234567">+380 67 123 45 67</a></li>
-            <li><a href="mailto:hello@lumiere-salon.com.ua">hello@lumiere-salon.com.ua</a></li>
-            <li>Пн–Пт 9:00–20:00 · Сб 10:00–19:00 · Нд 10:00–18:00</li>
+          <ul class="footer__links">
+            <li><span aria-hidden="true">📍</span> вул. Ярославів Вал, 12, Київ</li>
+            <li><span aria-hidden="true">📞</span> <a href="tel:+380671234567">+380 67 123 45 67</a></li>
+            <li><span aria-hidden="true">✉</span> <a href="mailto:hello@lumiere-salon.com.ua">hello@lumiere-salon.com.ua</a></li>
+            <li><span aria-hidden="true">📷</span> <a href="https://instagram.com" target="_blank" rel="noopener">@lumiere.salon</a></li>
           </ul>
         </div>
+
+        <div>
+          <h4>Графік роботи</h4>
+          <table class="footer__hours">
+            <caption class="visually-hidden">Графік роботи салону Lumière</caption>
+            <tbody>
+              <tr><td>Пн – Пт</td><td>9:00 – 20:00</td></tr>
+              <tr><td>Субота</td><td>10:00 – 19:00</td></tr>
+              <tr><td>Неділя</td><td>10:00 – 18:00</td></tr>
+            </tbody>
+          </table>
+          <a class="btn btn--gold footer__cta" href="booking.html">Записатись онлайн</a>
+        </div>
+
       </div>
+
       <div class="footer__bottom">
-        <p>© <span id="footer-year">2026</span> Салон краси Lumière</p>
-        <p><a href="privacy.html">Політика конфіденційності</a></p>
+        <p>© <span id="footer-year">2026</span> Салон краси Lumière. Усі права захищені.</p>
+        <p class="footer__bottom-links">
+          <a href="privacy.html">Політика конфіденційності</a>
+          <a class="to-top" href="#main">Нагору <span aria-hidden="true">↑</span></a>
+        </p>
       </div>
     </div>
   </footer>

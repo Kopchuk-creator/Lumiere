@@ -198,6 +198,7 @@
 .mode-switch input { position: absolute; opacity: 0; pointer-events: none; }
 .mode-switch input:checked + label {
   background: var(--grad-main);
+  background-origin: border-box;
   border-color: transparent;
   color: #fff;
 }
