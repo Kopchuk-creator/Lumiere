@@ -15,7 +15,7 @@ var SHOP_PRODUCTS = [
   /* --- Догляд за нігтями --- */
   { id: 'prod_top_coat', name: 'Топове покриття для нігтів', category: 'nails', price: 320,
     description: 'Глянцевий фініш без сколів до 3 тижнів.',
-    image: 'https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=400&q=80', inStock: true },
+    image: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=400&q=80', inStock: true },
   { id: 'prod_cuticle_oil', name: 'Олійка для кутикули', category: 'nails', price: 240,
     description: 'Мигдаль і вітамін Е — живлення та доглянутий вигляд щодня.',
     image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=400&q=80', inStock: true },
