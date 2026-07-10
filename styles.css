@@ -183,10 +183,20 @@ h1 em, h2 em, .display em { color: var(--c-pink-deep); font-style: italic; }
 }
 .header .btn { padding: 0.65em 1.4em; }
 
+/* Права група: кошик + «Записатись» + бургер разом */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+/* nav тримається ближче до логотипу, дії — праворуч */
+.nav { margin-right: auto; }
+
 .nav-toggle {
   display: none;
   background: none; border: 0; cursor: pointer;
   padding: 10px;
+  order: 2; /* бургер завжди праворуч від кошика на мобільному */
 }
 .nav-toggle__bar {
   display: block; width: 24px; height: 2px;
@@ -901,6 +911,8 @@ h1 em, h2 em, .display em { color: var(--c-pink-deep); font-style: italic; }
 .prose li { margin-bottom: var(--space-1); }
 
 /* ---------- Адаптив ---------- */
+
+/* Планшет і менше: бургер-меню, кошик і меню поруч, горизонтальний скрол секцій */
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; }
   .mirror--hero { max-width: 340px; margin: 0 auto; }
@@ -909,10 +921,10 @@ h1 em, h2 em, .display em { color: var(--c-pink-deep); font-style: italic; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .newsletter__card { grid-template-columns: 1fr; }
   .feature + .feature { border-left: 0; padding-left: 0; }
-}
 
-@media (max-width: 720px) {
+  /* Меню → бургер; кошик + бургер стоять поруч праворуч */
   .nav-toggle { display: block; }
+  .nav { margin: 0; }
   .nav {
     position: absolute;
     top: var(--header-h); left: 0; right: 0;
@@ -925,11 +937,75 @@ h1 em, h2 em, .display em { color: var(--c-pink-deep); font-style: italic; }
   .nav.is-open { display: block; }
   .nav__list { flex-direction: column; gap: var(--space-2); }
   .nav__link { display: block; padding: 0.6em 0; font-size: 1.02rem; }
-  .header__cta { display: none; }
+  .header__cta { display: none; }        /* «Записатись» ховаємо — воно є в меню/на сторінках */
+  .header__actions { gap: var(--space-2); }
 
-  .categories-strip ul { justify-content: flex-start; }
+  /* Горизонтальний скрол карток на головній (послуги, хіти, команда, відгуки).
+     Префікс .container піднімає специфічність над cart.css .products-grid */
+  .container .hscroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--space-2) var(--space-4) var(--space-3);
+    margin: 0 calc(-1 * var(--space-4));
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-pink) transparent;
+  }
+  .container .hscroll > * {
+    flex: 0 0 auto;
+    width: min(74%, 290px);
+    scroll-snap-align: start;
+  }
+  .hscroll::-webkit-scrollbar { height: 8px; }
+  .hscroll::-webkit-scrollbar-track { background: transparent; }
+  .hscroll::-webkit-scrollbar-thumb { background: var(--c-pink); border-radius: var(--radius-round); }
+}
+
+@media (max-width: 720px) {
+  .categories-strip ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-pink) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
   .cat-item { min-width: 84px; }
   .cat-item__circle { width: 64px; height: 64px; }
+
+  .hscroll > * { width: 80%; }
+
+  /* Горизонтальний скрол рядів карток на телефоні —
+     крамниця, каталог послуг, галерея, майстри.
+     Префікс .container піднімає специфічність над cart.css .products-grid */
+  .container .cards-grid, .container .products-grid,
+  .container .masters-grid, .container .gallery-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--space-2) var(--space-4) var(--space-3);
+    margin: 0 calc(-1 * var(--space-4));
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-pink) transparent;
+  }
+  .container .cards-grid > *, .container .products-grid > *,
+  .container .masters-grid > *, .container .gallery-grid > * {
+    flex: 0 0 auto;
+    width: 80%;
+    scroll-snap-align: start;
+  }
+  .cards-grid::-webkit-scrollbar, .products-grid::-webkit-scrollbar,
+  .masters-grid::-webkit-scrollbar, .gallery-grid::-webkit-scrollbar { height: 8px; }
+  .cards-grid::-webkit-scrollbar-thumb, .products-grid::-webkit-scrollbar-thumb,
+  .masters-grid::-webkit-scrollbar-thumb, .gallery-grid::-webkit-scrollbar-thumb {
+    background: var(--c-pink); border-radius: var(--radius-round);
+  }
 
   .booking-step { padding: var(--space-4) var(--space-3); }
   .progress li { font-size: 0; }

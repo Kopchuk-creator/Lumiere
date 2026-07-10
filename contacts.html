@@ -29,9 +29,6 @@
   <header class="header">
     <div class="container header__inner">
       <a class="logo" href="index.html">Lumi<span>è</span>re</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
       <nav class="nav" id="site-nav" aria-label="Головна навігація">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html">Головна</a></li>
@@ -42,11 +39,16 @@
           <li><a class="nav__link" href="contacts.html" aria-current="page">Контакти</a></li>
         </ul>
       </nav>
-      <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
-      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+      <div class="header__actions">
+        <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
         <span class="cart-badge" id="cart-badge" hidden>0</span>
       </button>
+        <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -87,7 +89,7 @@
             title="Карта: салон краси Lumière, вул. Ярославів Вал 12, Київ"
             src="https://www.openstreetmap.org/export/embed.html?bbox=30.5030%2C50.4485%2C30.5150%2C50.4545&amp;layer=mapnik&amp;marker=50.4515%2C30.5090">
           </iframe>
-          <p class="field-hint"><a href="https://www.openstreetmap.org/?mlat=50.4515&amp;mlon=30.5090#map=17/50.4515/30.5090" target="_blank" rel="noopener">Відкрити карту у повному розмірі</a></p>
+          <p style="margin-top: var(--space-3);"><a class="btn btn--ghost" href="https://www.openstreetmap.org/?mlat=50.4515&amp;mlon=30.5090#map=17/50.4515/30.5090" target="_blank" rel="noopener">🗺 Відкрити карту у повному розмірі</a></p>
         </div>
       </div>
     </section>

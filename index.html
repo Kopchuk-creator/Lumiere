@@ -56,9 +56,6 @@
   <header class="header">
     <div class="container header__inner">
       <a class="logo" href="index.html">Lumi<span>è</span>re</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
       <nav class="nav" id="site-nav" aria-label="Головна навігація">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html" aria-current="page">Головна</a></li>
@@ -69,11 +66,16 @@
           <li><a class="nav__link" href="contacts.html">Контакти</a></li>
         </ul>
       </nav>
-      <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
-      <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
+      <div class="header__actions">
+        <button class="cart-toggle" id="cart-toggle" aria-label="Кошик" aria-haspopup="dialog" aria-controls="cart-drawer">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
         <span class="cart-badge" id="cart-badge" hidden>0</span>
       </button>
+        <a class="btn btn--gold header__cta" href="booking.html">Записатись</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -139,7 +141,7 @@
           <h2 id="top-services-title">Те, за чим повертаються</h2>
           <p>Найпопулярніші процедури салону. Повний каталог із цінами — на сторінці послуг.</p>
         </div>
-        <div class="cards-grid">
+        <div class="cards-grid hscroll">
           <article class="service-card">
             <div class="service-card__photo">
               <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/cat-nails.svg'" alt="Манікюр з гель-лаком — макрознімок роботи" width="800" height="500" loading="lazy">
@@ -192,7 +194,7 @@
           <h2 id="shop-hits-title">Хіти крамниці</h2>
           <p>Засоби, якими працюють наші майстри, і сертифікати в подарунок. Доставка по Києву або самовивіз із салону.</p>
         </div>
-        <div class="products-grid">
+        <div class="products-grid hscroll">
           <article class="product-card">
             <div class="mirror"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/shop-top-coat.svg'" alt="Топове покриття для нігтів Lumière" width="800" height="800" loading="lazy"></div>
             <h3>Топове покриття для нігтів</h3>
@@ -236,7 +238,7 @@
           <h2 id="masters-title">Майстри, яким <em>довіряють</em></h2>
           <p>Шість спеціалістів із профільною освітою та досвідом від 5 років.</p>
         </div>
-        <div class="masters-grid">
+        <div class="masters-grid hscroll">
           <article class="master-card">
             <div class="mirror"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=800&amp;q=80" onerror="this.onerror=null;this.src='assets/img/master-olena.svg'" alt="Олена Кравець, топ-майстер манікюру" width="400" height="400" loading="lazy"></div>
             <h3>Олена Кравець</h3>
@@ -269,7 +271,7 @@
           <p class="eyebrow">Відгуки</p>
           <h2 id="reviews-title">Що кажуть наші гості</h2>
         </div>
-        <div class="reviews-grid">
+        <div class="reviews-grid hscroll">
           <article class="review-card">
             <p class="review-card__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
             <p class="review-card__text">Ходжу до Олени вже другий рік — манікюр тримається три тижні без сколів. Дизайни підбирає так, що щоразу компліменти.</p>
