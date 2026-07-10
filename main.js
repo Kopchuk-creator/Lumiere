@@ -52,26 +52,54 @@
     });
   });
 
-  /* --- Підписка на розсилку (головна). Точка інтеграції: email → сервіс розсилок --- */
+  /* --- Підписка на розсилку (головна). Точка інтеграції: email → сервіс розсилок.
+         Згода на обробку email обов'язкова — як у формах запису та зворотного зв'язку. --- */
   var nlForm = document.getElementById('newsletter-form');
   if (nlForm) {
+    var isEmail = function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+
+    var nlErr = function (id, msg) {
+      var input = document.getElementById(id);
+      var err = document.getElementById(id + '-error');
+      err.textContent = msg;
+      err.classList.toggle('is-visible', !!msg);
+      input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    };
+
+    /* Інлайн-валідація по blur — консистентно з рештою форм сайту */
+    nlForm.addEventListener('focusout', function (e) {
+      if (e.target.id !== 'nl-email') return;
+      var v = e.target.value.trim();
+      nlErr('nl-email', v && !isEmail(v) ? 'Вкажіть коректний email, напр. name@example.com.' : '');
+    });
+    nlForm.addEventListener('change', function (e) {
+      if (e.target.id === 'nl-consent' && e.target.checked) nlErr('nl-consent', '');
+    });
+
     nlForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var input = document.getElementById('nl-email');
+      var email = document.getElementById('nl-email').value.trim();
+      var consent = document.getElementById('nl-consent').checked;
       var note = document.getElementById('nl-note');
-      var email = input.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        note.textContent = 'Вкажіть коректний email, напр. name@example.com.';
-        note.style.color = 'var(--c-error)';
-        note.classList.add('is-visible');
-        input.focus();
+      var ok = true;
+
+      if (!isEmail(email)) { nlErr('nl-email', 'Вкажіть коректний email, напр. name@example.com.'); ok = false; }
+      else nlErr('nl-email', '');
+      if (!consent) { nlErr('nl-consent', 'Без згоди на обробку email підписка неможлива.'); ok = false; }
+      else nlErr('nl-consent', '');
+
+      if (!ok) {
+        note.classList.remove('is-visible');
+        var firstInvalid = nlForm.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) firstInvalid.focus();
         return;
       }
+
       /* Точка інтеграції: сюди підключається сервіс розсилок */
-      console.log('NEWSLETTER_PAYLOAD', JSON.stringify({ email: email }));
+      console.log('NEWSLETTER_PAYLOAD', JSON.stringify({ email: email, consent: consent }));
       nlForm.reset();
+      nlErr('nl-email', '');
       note.textContent = 'Дякуємо! Ви підписані на бьюті-поради Lumière ♡';
-      note.style.color = 'var(--c-success)';
       note.classList.add('is-visible');
     });
   }

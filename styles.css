@@ -505,7 +505,8 @@ h1 em, h2 em, .display em { color: var(--c-pink-deep); font-style: italic; }
 .newsletter__card h2 { margin-bottom: var(--space-1); }
 .newsletter__card .script-accent { font-size: 1.5rem; margin: 0; }
 .newsletter__form { display: flex; gap: var(--space-2); flex-wrap: wrap; }
-.newsletter__form input {
+/* Лише поле email — не чекбокс згоди */
+.newsletter__form input[type="email"] {
   flex: 1; min-width: 200px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -515,8 +516,14 @@ h1 em, h2 em, .display em { color: var(--c-pink-deep); font-style: italic; }
   background: var(--c-bg);
   color: var(--c-ink);
 }
-.newsletter__form input:focus { outline: none; border-color: var(--c-pink); }
-.newsletter__note { grid-column: 1 / -1; margin: 0; font-size: var(--fs-small); color: var(--c-success); display: none; }
+.newsletter__form input[type="email"]:focus { outline: none; border-color: var(--c-pink); }
+/* Чекбокс згоди, помилки та статус — кожен на власному рядку */
+.newsletter__form .checkbox-field,
+.newsletter__form .field-error,
+.newsletter__note { width: 100%; }
+.newsletter__form .checkbox-field { margin-bottom: 0; }
+.newsletter__form .checkbox-field label { font-size: var(--fs-small); }
+.newsletter__note { margin: 0; font-size: var(--fs-small); color: var(--c-success); display: none; }
 .newsletter__note.is-visible { display: block; }
 
 /* ---------- Галерея ---------- */
